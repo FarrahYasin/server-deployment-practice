@@ -22,6 +22,7 @@ app.get('/',stamper,(req,res) => {
 })
 
 app.get('/bad', badRequest);
+
 function badRequest(req, res, next) {
     req.body = {
       test: 'test'
@@ -37,7 +38,6 @@ app.get('*',pageNotFound)
 function start(port){
     app.listen(port, () => console.log('Up and running on port : ', port))
 }
-
 module.exports={
     app,
     start
