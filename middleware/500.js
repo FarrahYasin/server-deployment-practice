@@ -1,6 +1,6 @@
 'use strict';
 //for bad request
-module.exports = (error,res, req, next)=>{
+module.exports = (error,req,res, next)=>{
 res.status(500).json({
     code:500,
     route:req.originalUrl,
@@ -8,4 +8,5 @@ res.status(500).json({
     body:req.body,
     message:`SERVER ERROR: ${error.message}`
 })
+// console.log(res.originalUrl)
 }
